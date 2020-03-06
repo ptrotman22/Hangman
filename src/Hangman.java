@@ -103,13 +103,14 @@ public class Hangman {
                 break;
             }
         }
-        if (error >= 1) {
-            for (int i = 0; i < missedLetters.size(); i++) {
-                if (missedLetters.get(i).equals(letter)) {
-                    return 2;
-                }
+
+        // Check if letter is a duplicate.
+        for (int i = 0; i < missedLetters.size(); i++) {
+            if (missedLetters.get(i).equals(letter)) {
+                        return 2;
             }
         }
+
 
         // Add letter to Array list.
         if (incorrect == 1) {
@@ -196,7 +197,7 @@ public class Hangman {
 
         int check = 0;
 
-        for (int i = 0; i < word.length; i++) {
+        for (int i = 0; i < reveal.size(); i++) {
             for (int j = 0; j < word.length; i++) {
                 if (reveal.get(i).equals(word[j])) {
                     System.out.println(word[j]);
