@@ -8,7 +8,7 @@ public class Hangman {
         String word = "company"
         String[] winLetters = new String[word.length()];
 
-        // Populate String winLetters array
+        // Populate String winLetters array with word.
         for (int i = 0; i < winLetters.length; i++) {
             winLetters[i] = String.valueOf(word.charAt(i));
         }
@@ -21,9 +21,17 @@ public class Hangman {
         }while ()
     }
 
-    public static String MissedLetters (String missed){
+    public static String MissedLetters (String missed, String[] letters){
+        //String word = "company";
+        String[] lettersCheck = new String[letters.length];
 
+        for (int i = 0; i < letters.length; i++) {
+            lettersCheck[i] = letters[i];
+        }
 
+        
+
+        return missed;
     }
     public static int HangPic(int picError){
         int picCheck = picError;
