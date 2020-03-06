@@ -1,11 +1,11 @@
 // Hangman Project game
 /* Hangman Picture
 * Hangman word, Accept input, display input and check input to previous inputs*/
-import java.util.*
+import java.util.*;
 public class Hangman {
     public static void main(String[] args){
         //System.out.println("");
-        String word = "company"
+        String word = "company";
         String[] winLetters = new String[word.length()];
 
         // Populate String winLetters array with word.
@@ -15,23 +15,52 @@ public class Hangman {
 
         do {
             System.out.println("H A N G M A N");
-            String[] missedLetters = new String[6];
+            ArrayList<String> missedLetters = new ArrayList<String>();
 
 
-        }while ()
+        }while ();
     }
 
-    public static String MissedLetters (String missed, String[] letters){
+    public static ArrayList<String> MissedLetters (String letter, String[] word, ArrayList<String> totalMiss){
         //String word = "company";
-        String[] lettersCheck = new String[letters.length];
+        String[] lettersCheck = new String[word.length];
+        int check = letter.length();
+        // Pass on Array list letters
+        ArrayList<String> missedLetters = new ArrayList<String>();
+        missedLetters = (ArrayList<String>)totalMiss.clone();
 
-        for (int i = 0; i < letters.length; i++) {
-            lettersCheck[i] = letters[i];
+
+        //Fill letters array with word or example word: company.
+        for (int i = 0; i < word.length; i++) {
+            lettersCheck[i] = word[i];
+        }
+        int correct = 1;
+        //Check if the letter is correct.
+        for (int i = 0; i < lettersCheck.length; i++) {
+            if (lettersCheck[i] == letter) {
+                correct = 0;
+                break;
+            }
         }
 
-        
+        // Add letter to Array list.
+        if (correct == 1) {
+            check++;
+            missedLetters.add(letter);
+        }
 
-        return missed;
+        // Print missed letters.
+        System.out.println("Missed: ");
+        for (int i = 0; i < missedLetters.size(); i++){
+            System.out.println(missedLetters.get(i));
+        }
+
+
+        return missedLetters;
+    }
+
+    public static String RevealWord(){
+        
     }
     public static int HangPic(int picError){
         int picCheck = picError;
