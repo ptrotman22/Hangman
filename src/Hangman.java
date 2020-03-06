@@ -29,7 +29,7 @@ public class Hangman {
             HangPic(error);
             System.out.println("Missed letters: ");
             for (int i = 0; i < winLetters.length; i++) {
-                System.out.println(" _ ");
+                System.out.print(" _ ");
             }
 
             System.out.println("Guess a letter.\n" +
@@ -37,13 +37,13 @@ public class Hangman {
             String letter = input.nextLine();
 
             while (error != 6) {
-                int check = CheckLetter(letter, winLetters, missedLetters);
+                int check = CheckLetter(letter, winLetters, missedLetters, error);
                 while (check == 2) {
                     // Choose the same letter condition.
                     System.out.println("You have already guessed that letter. Choose again.");
                     System.out.println("Guess a letter.");
                     String again = new Scanner(System.in).nextLine(); // clear buffer for scanner.
-                    check = CheckLetter(again, winLetters, missedLetters);
+                    check = CheckLetter(again, winLetters, missedLetters, error);
                 }
                 if (check == 1) {
                     // Gain a Point Condition
@@ -81,7 +81,7 @@ public class Hangman {
         System.out.println("Thank you For Playing.");
     }
 
-    public static Integer CheckLetter (String letter, String[] word, ArrayList<String> totalMiss){
+    public static Integer CheckLetter (String letter, String[] word, ArrayList<String> totalMiss, int error){
         //String word = "company";
         String[] lettersCheck = new String[word.length];
         //int check = word.length;
@@ -103,11 +103,11 @@ public class Hangman {
                 break;
             }
         }
-
-        for (int i = 0; i < missedLetters.size(); i++){
-            if (missedLetters.get(i).equals(letter)){
-                System.out.println();
-                return 2;
+        if (error >= 1) {
+            for (int i = 0; i < missedLetters.size(); i++) {
+                if (missedLetters.get(i).equals(letter)) {
+                    return 2;
+                }
             }
         }
 
