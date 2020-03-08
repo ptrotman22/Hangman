@@ -45,14 +45,14 @@ public class Hangman {
                     String again = new Scanner(System.in).nextLine(); // clear buffer for scanner.
                     check = CheckLetter(again, winLetters, missedLetters,victoryLetters, error);
                 }
-                if (check == 1) {
+                if (check == 0) {
                     // Gain a Point Condition
                     HangPic(error);
                     missedLetters = MissedLetters(letter, winLetters, missedLetters);
                     victoryLetters = VictoryLet(letter, winLetters, victoryLetters);
                     letter = RevealWord(victoryLetters, winLetters);
                     victory++;
-                } else if (check == 0) {
+                } else if (check == 1) {
                     // Lose a point Condition
                     error++;
                     HangPic(error);
@@ -127,6 +127,7 @@ public class Hangman {
             return 1;
         }
         else{
+            //victoryLetters.set(letter);
             return 0;
         }
     }
