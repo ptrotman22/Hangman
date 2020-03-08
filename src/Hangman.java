@@ -37,13 +37,13 @@ public class Hangman {
             String letter = input.nextLine();
 
             while (error != 6) {
-                int check = CheckLetter(letter, winLetters, missedLetters, error);
+                int check = CheckLetter(letter, winLetters, missedLetters,victoryLetters, error);
                 while (check == 2) {
                     // Choose the same letter condition.
                     System.out.println("You have already guessed that letter. Choose again.");
                     System.out.println("Guess a letter.");
                     String again = new Scanner(System.in).nextLine(); // clear buffer for scanner.
-                    check = CheckLetter(again, winLetters, missedLetters, error);
+                    check = CheckLetter(again, winLetters, missedLetters,victoryLetters, error);
                 }
                 if (check == 1) {
                     // Gain a Point Condition
@@ -81,13 +81,16 @@ public class Hangman {
         System.out.println("Thank you For Playing.");
     }
 
-    public static Integer CheckLetter (String letter, String[] word, ArrayList<String> totalMiss, int error){
+    public static Integer CheckLetter (String letter, String[] word, ArrayList<String> totalMiss, ArrayList<String>totalVictory, int error){
         //String word = "company";
         String[] lettersCheck = new String[word.length];
         //int check = word.length;
         // Pass on Array list letters
         ArrayList<String> missedLetters = new ArrayList<String>();
         missedLetters = (ArrayList<String>)totalMiss.clone();
+
+        ArrayList<String> victoryLetters = new ArrayList<String>();
+        victoryLetters = (ArrayList<String>)totalMiss.clone();
 
 
 
@@ -104,10 +107,17 @@ public class Hangman {
             }
         }
 
-        // Check if letter is a duplicate.
+        // Check if letter is a duplicate Missed letters.
         for (int i = 0; i < missedLetters.size(); i++) {
             if (missedLetters.get(i).equals(letter)) {
                         return 2;
+            }
+        }
+
+        // Check if letter is a duplicate of current victory letters.
+        for (int i = 0; i < victoryLetters.size(); i++) {
+            if (victoryLetters.get(i).equals(letter)) {
+                return 2;
             }
         }
 
