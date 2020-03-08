@@ -36,7 +36,7 @@ public class Hangman {
                     "\n");
             String letter = input.nextLine();
 
-            while (error != 6) {
+            while (error != 7) {
                 int check = CheckLetter(letter, winLetters, missedLetters,victoryLetters, error);
                 while (check == 2) {
                     // Choose the same letter condition.
@@ -48,15 +48,15 @@ public class Hangman {
                 if (check == 0) {
                     // Gain a Point Condition
                     HangPic(error);
-                    missedLetters = MissedLetters(letter, winLetters, missedLetters);
                     victoryLetters = VictoryLet(letter, winLetters, victoryLetters);
+                    missedLetters = MissedLetters(letter, winLetters, missedLetters, victoryLetters);
                     letter = RevealWord(victoryLetters, winLetters);
                     victory++;
                 } else if (check == 1) {
                     // Lose a point Condition
                     error++;
                     HangPic(error);
-                    missedLetters = MissedLetters(letter, winLetters, missedLetters);
+                    missedLetters = MissedLetters(letter, winLetters, missedLetters, victoryLetters);
                     letter = RevealWord(victoryLetters, winLetters);
                 } else if (victory == word.length()) {
                     // Win Condition
@@ -67,9 +67,21 @@ public class Hangman {
                         end = 1;
                     }
                     else {
-                        error = 6;
+                        error = 7;
                     }
-                } else {
+                } else if (error == 6){
+                    //Lose the Game Condition
+                    System.out.println("Unfortunately you didn't win! The secret word is \""+ word +"\"! You have lost!");
+                    System.out.println("Do you want to play again? (yes or no)");
+                    String winner = new Scanner(System.in).nextLine();
+                    if (winner.equalsIgnoreCase("n")){
+                        end = 1;
+                    }
+                    else{
+                        error = 7;
+                    }
+                }
+                else {
                     System.out.println("Error: Program Malfunctioned");
                 }
 
@@ -90,7 +102,7 @@ public class Hangman {
         missedLetters = (ArrayList<String>)totalMiss.clone();
 
         ArrayList<String> victoryLetters = new ArrayList<String>();
-        victoryLetters = (ArrayList<String>)totalMiss.clone();
+        victoryLetters = (ArrayList<String>)totalVictory.clone();
 
 
 
@@ -160,7 +172,7 @@ public class Hangman {
     }
 
 
-    public static ArrayList<String> MissedLetters (String letter, String[] word, ArrayList<String> totalMiss){
+    public static ArrayList<String> MissedLetters (String letter, String[] word, ArrayList<String> totalMiss, ArrayList<String> totalVictory){
         //String word = "company";
         String[] lettersCheck = new String[word.length];
         int check = letter.length();
@@ -168,17 +180,19 @@ public class Hangman {
         ArrayList<String> missedLetters = new ArrayList<String>();
         missedLetters = (ArrayList<String>)totalMiss.clone();
 
-        //ArrayList<String> victoryLetters = new ArrayList<String>();
-        //victoryLetters = (ArrayList<String>)totalMiss.clone();
+        ArrayList<String> victoryLetters = new ArrayList<String>();
+        victoryLetters = (ArrayList<String>)totalVictory.clone();
 
 
         //Fill letters array with word or example word: company.
         for (int i = 0; i < word.length; i++) {
             lettersCheck[i] = word[i];
         }
+
         int correct = 1;
         //Check if the letter is correct.
         for (int i = 0; i < lettersCheck.length; i++) {
+            //System.out.println("Broken");
             if (lettersCheck[i].equals(letter)) {
                 correct = 0;
                 break;
@@ -191,11 +205,20 @@ public class Hangman {
             missedLetters.add(letter);
         }
 
+        //Remove letters from Missedletters which are contained in Victory
+        for (int i = 0; i < victoryLetters.size(); i++){
+            for (int j = 0; j < missedLetters.size(); j++){
+                if(victoryLetters.get(i).equalsIgnoreCase(missedLetters.get(j))){
+                    missedLetters.remove(j);
+                }
+            }
+        }
+
 
         // Print missed letters.
-        System.out.println("Missed: ");
+        System.out.print("Missed: ");
         for (int i = 0; i < missedLetters.size(); i++){
-            System.out.println(missedLetters.get(i));
+            System.out.print(missedLetters.get(i));
         }
 
 
@@ -209,7 +232,7 @@ public class Hangman {
         int check = 0;
 
         for (int i = 0; i < reveal.size(); i++) {
-            for (int j = 0; j < word.length; i++) {
+            for (int j = 0; j < word.length; j++) {
                 if (reveal.get(i).equals(word[j])) {
                     System.out.println(word[j]);
                 } else {
@@ -222,7 +245,7 @@ public class Hangman {
             check = 0;
         }
 
-        System.out.println("Guess a Letter.");
+        System.out.println("\nGuess a Letter.");
         String input = new Scanner(System.in).nextLine();
 
         return input;

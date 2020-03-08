@@ -29,6 +29,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="Hangman" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -79,46 +80,46 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="204" key="GridCell.Tab.0.bottom" timestamp="1583659158395">
+    <state width="1237" height="204" key="GridCell.Tab.0.bottom" timestamp="1583673170850">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583532202437" />
-    <state width="1237" height="204" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583659158395" />
-    <state width="1237" height="204" key="GridCell.Tab.0.center" timestamp="1583659158395">
+    <state width="1237" height="204" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583673170850" />
+    <state width="1237" height="204" key="GridCell.Tab.0.center" timestamp="1583673170850">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583532202437" />
-    <state width="1237" height="204" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583659158395" />
-    <state width="1237" height="204" key="GridCell.Tab.0.left" timestamp="1583659158395">
+    <state width="1237" height="204" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583673170850" />
+    <state width="1237" height="204" key="GridCell.Tab.0.left" timestamp="1583673170849">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583532202437" />
-    <state width="1237" height="204" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583659158395" />
-    <state width="1237" height="204" key="GridCell.Tab.0.right" timestamp="1583659158395">
+    <state width="1237" height="204" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583673170849" />
+    <state width="1237" height="204" key="GridCell.Tab.0.right" timestamp="1583673170850">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583532202437" />
-    <state width="1237" height="204" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583659158395" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1583659158395">
+    <state width="1237" height="204" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583673170850" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1583673166523">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583532202437" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583659158395" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1583659158395">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583673166523" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1583673166522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583532202437" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1583659158395" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1583659158395">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1583673166522" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1583673166521">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583532202437" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1583659158395" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1583659158395">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1583673166521" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1583673166522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583532202437" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1583659158395" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1583673166522" />
     <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1583652152417">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -133,10 +134,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Hangman.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="3" />
+          <line>53</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="totalMiss" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
