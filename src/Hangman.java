@@ -36,6 +36,10 @@ public class Hangman {
                     "\n");
             String letter = input.nextLine();
 
+            error = 0; //error counter reset.
+            victory = 0; // victory counter reset.
+            end = 0; //end game 1 = end, 0 = continue reset.
+
             while (error != 7) {
                 int check = CheckLetter(letter, winLetters, missedLetters,victoryLetters, error);
                 while (check == 2) {
@@ -48,47 +52,56 @@ public class Hangman {
                 if (check == 0) {
                     // Gain a Point Condition
                     HangPic(error);
+                    victory++;
                     victoryLetters = VictoryLet(letter, winLetters, victoryLetters);
                     missedLetters = MissedLetters(letter, winLetters, missedLetters, victoryLetters);
                     letter = RevealWord(victoryLetters, winLetters);
-                    victory++;
+                    if (victory == word.length()) {
+                        // Win Condition
+                        System.out.println("Yes! The secret word is \"" + word + "\"! You have won!");
+                        System.out.println("Do you want to play again? (yes or no)");
+                        String winner = new Scanner(System.in).nextLine();
+                        if (winner.equalsIgnoreCase("n")) {
+                            end = 1;
+                            error = 7;
+                            break;
+                        } else {
+                            error = 7;
+                            break;
+                        }
+                    }
+                    else{
+                        check = CheckLetter(letter, winLetters, missedLetters,victoryLetters, error);
+                    }
+                    //++victory;
                 } else if (check == 1) {
                     // Lose a point Condition
                     error++;
                     HangPic(error);
                     missedLetters = MissedLetters(letter, winLetters, missedLetters, victoryLetters);
                     letter = RevealWord(victoryLetters, winLetters);
-                } else if (victory == word.length()) {
-                    // Win Condition
-                    System.out.println("Yes! The secret word is \""+ word +"\"! You have won!");
-                    System.out.println("Do you want to play again? (yes or no)");
-                    String winner = new Scanner(System.in).nextLine();
-                    if (winner.equalsIgnoreCase("n")){
-                        end = 1;
-                        error = 7;
+                    if (error == 6){
+                        //Lose the Game Condition
+                        System.out.println("Unfortunately you didn't win! The secret word is \""+ word +"\"! You have lost!");
+                        System.out.println("Do you want to play again? (yes or no)");
+                        String winner = new Scanner(System.in).nextLine();
+                        if (winner.equalsIgnoreCase("n")){
+                            end = 1;
+                            error = 7;
+                            break;
+                        }
+                        else{
+                            error = 7;
+                            break;
+                        }
                     }
-                    else {
-                        error = 7;
-                    }
-                } else if (error == 6){
-                    //Lose the Game Condition
-                    System.out.println("Unfortunately you didn't win! The secret word is \""+ word +"\"! You have lost!");
-                    System.out.println("Do you want to play again? (yes or no)");
-                    String winner = new Scanner(System.in).nextLine();
-                    if (winner.equalsIgnoreCase("n")){
-                        end = 1;
-                        error = 7;
-                    }
-                    else{
-                        error = 7;
-                    }
+
                 }
                 else {
                     System.out.println("Error: Program Malfunctioned");
                 }
 
             }
-
 
         } while (end != 1);
 
@@ -231,20 +244,24 @@ public class Hangman {
         ArrayList<String> reveal = new ArrayList<String>();
         reveal = (ArrayList<String>)victoryLetter.clone();
 
-        int check = 0;
+        String[] temp = new String[word.length];
 
-        for (int i = 0; i < reveal.size(); i++) {
-            for (int j = 0; j < word.length; j++) {
-                if (reveal.get(i).equals(word[j])) {
-                    System.out.println(word[j]);
-                } else {
-                    check++;
+        for (int i = 0; i < temp.length; i++){
+            temp[i] = " _ ";
+        }
+        System.out.println();
+
+        for (int i = 0; i < word.length; i++) {
+            for (int j = 0; j < reveal.size(); j++) {
+                if (reveal.get(j).equals(word[i])) {
+                    //System.out.print(reveal.get(j));
+                    temp[i]= word[i];
                 }
             }
-            if (check == word.length){
-                System.out.println(" _ ");
-            }
-            check = 0;
+        }
+
+        for (int i = 0; i < temp.length; i++){
+            System.out.print(temp[i]);
         }
 
         System.out.println("\nGuess a Letter.");
