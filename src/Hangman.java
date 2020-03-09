@@ -65,6 +65,7 @@ public class Hangman {
                     String winner = new Scanner(System.in).nextLine();
                     if (winner.equalsIgnoreCase("n")){
                         end = 1;
+                        error = 7;
                     }
                     else {
                         error = 7;
@@ -76,6 +77,7 @@ public class Hangman {
                     String winner = new Scanner(System.in).nextLine();
                     if (winner.equalsIgnoreCase("n")){
                         end = 1;
+                        error = 7;
                     }
                     else{
                         error = 7;
