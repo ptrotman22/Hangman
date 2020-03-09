@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8afdcc26-a4df-46db-9c9b-6266182f7380" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hangman.java" afterDir="false" />
-    </list>
+    <list default="true" id="8afdcc26-a4df-46db-9c9b-6266182f7380" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,15 +136,6 @@
     <state x="-1308" y="225" width="696" height="678" key="search.everywhere.popup/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583445047568" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Hangman.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="totalMiss" />
